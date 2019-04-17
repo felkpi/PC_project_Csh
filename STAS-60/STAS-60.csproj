@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADFEC217-86B2-484A-8D64-E33E4C01D09F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>STAS_60</RootNamespace>
+    <AssemblyName>STAS-60_500</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control_Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control_Form1.Designer.cs">
+      <DependentUpon>Control_Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModBus_RTU.cs" />
+    <Compile Include="ModBus_TCP.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="TCP_IP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TCP_IP.Designer.cs">
+      <DependentUpon>TCP_IP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Viev_wStart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Viev_wStart.Designer.cs">
+      <DependentUpon>Viev_wStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\View_Alarm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\View_Alarm.Designer.cs">
+      <DependentUpon>View_Alarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\View_Archiv.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\View_Archiv.Designer.cs">
+      <DependentUpon>View_Archiv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\View_Graphik.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\View_Graphik.Designer.cs">
+      <DependentUpon>View_Graphik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\View_Setings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\View_Setings.Designer.cs">
+      <DependentUpon>View_Setings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\View_wFinish.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\View_wFinish.Designer.cs">
+      <DependentUpon>View_wFinish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\View_Work.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\View_Work.Designer.cs">
+      <DependentUpon>View_Work.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Control_Form1.resx">
+      <DependentUpon>Control_Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TCP_IP.resx">
+      <DependentUpon>TCP_IP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Viev_wStart.resx">
+      <DependentUpon>Viev_wStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\View_Alarm.resx">
+      <DependentUpon>View_Alarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\View_Archiv.resx">
+      <DependentUpon>View_Archiv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\View_Graphik.resx">
+      <DependentUpon>View_Graphik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\View_Setings.resx">
+      <DependentUpon>View_Setings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\View_wFinish.resx">
+      <DependentUpon>View_wFinish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\View_Work.resx">
+      <DependentUpon>View_Work.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="archive_12957.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Crash_Reporter_41093.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="graph_icon-icons.com_63136.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="chart_99440.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="table_graph_6191.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_settings_tools_22597.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebook-with-icons-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADOX">
+      <Guid>{00000600-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apps-utilities-system-monitor-icon %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
